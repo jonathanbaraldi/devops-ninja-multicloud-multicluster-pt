@@ -1,0 +1,32 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: api-video 
+  # namespace: whoami5
+  labels:
+    allow.http: "false"
+    application: api-video
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: api-video
+  template:
+    metadata:
+      labels:
+        application: api-video
+    spec:
+      containers:
+      - name: api-video
+        image: jonathanbaraldi/api-video:dev2
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: config
+        ports:
+        - containerPort: 80
+        securityContext:
+          privileged: true
+
+

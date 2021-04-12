@@ -1,0 +1,8 @@
+spec:
+  rules:
+    - host: app.multicloud.ml
+      http:
+        paths:
+          - backend:
+              serviceName: mc-frontend
+              servicePort: 80

@@ -1,0 +1,8 @@
+spec:
+  rules:
+    - host: cockroachdb.dev-ops-ninja.com
+      http:
+        paths:
+          - backend:
+              serviceName: cockroachdb
+              servicePort: 8080

@@ -1,0 +1,51 @@
+namespace: jonjon
+targetCustomizations:
+
+#- name: dev
+#  clusterSelector:
+#    matchLabels:
+#      env: dev
+#  yaml:
+#    overlays:
+#    # Refers to overlays/noreplication folder
+#    - noreplication
+
+- name: aws
+  clusterSelector:
+    matchLabels:
+      env: aws
+  yaml:
+    overlays:
+    # Refers to overlays/scale3 folder
+    - aws
+
+- name: gcp
+  clusterSelector:
+    matchLabels:
+      env: gcp
+  yaml:
+    overlays:
+    # Refers to overlays/scale3 folder
+    - gcp
+
+
+
+# - name: prod-2
+#   clusterSelector:
+#     matchLabels:
+#       env: prod-2
+#   yaml:
+#     overlays:
+#     - prod2
+
+
+
+#- name: prod-3
+#  clusterSelector:
+#    matchLabels:
+#      env: prod-3
+#  yaml:
+    # Refers to overlays/servicelb, scale3 folders
+#    overlays:
+    # - servicelb
+#    - prod3

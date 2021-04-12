@@ -1,0 +1,13 @@
+data:
+  user: 'root'
+  host: 'cockroachdb.jonjon.svc.cluster.local' 
+  database: 'files' 
+  port: '26257'
+
+  cloud: 'gcp'
+  cluster: 'prod-2' 
+  deployment: 'single' 
+
+
+
+

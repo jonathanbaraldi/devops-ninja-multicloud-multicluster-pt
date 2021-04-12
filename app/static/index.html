@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="./assets/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="api.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    
+    <style>
+        
+
+        body {
+            text-align: center;
+            font-family: courier;
+            background: #000;
+            color: green;
+
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        .book_id, .song_id, .video_id {
+            display: none;
+        }
+
+        table {
+            text-align: center;
+            width:70%; 
+            margin-left:15%; 
+            margin-right:15%;
+        }
+
+        .books, .songs, .videos {
+            padding: : 10px;
+            border: 2px solid #FFF ;
+        }
+
+        #q {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            opacity: 0.2;
+        }
+
+        .header {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            z-index: 10;   
+        }
+        .header .left {
+            width: 30%;
+            left: 0px;
+            text-align: left;
+            margin-left: 15px;
+            margin-top: 15px;
+            position: absolute;
+        }
+        .header .right {
+            width: 70%;
+            right:0px;
+            position: absolute;
+            text-align: left;
+            margin-right: 15px;
+            margin-top: 15px;
+        }
+        .header .left img {
+            width: 85%;
+            height: 85%;
+            
+        }
+
+        .books {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 20;   
+        }
+
+        .songs {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 30;   
+        }
+
+        .videos {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 40;   
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <canvas id="q"></canvas>
+
+    <div class='header'>
+       
+        <div class='left'>
+            <img src='assets/logo.png' />
+        </div>
+
+        <div class='right'>
+            <h1>DevOps Ninja</h1>
+            <h2>Aplicação Multi-Cloud Multi-Cluster</h2>
+            <h3>Cloud:      AWS</h3>  
+            <h3>Cluster:    prod-1</h3>
+            <h3>Deployment: Single</h3>            
+        </div>
+        
+    </div>
+
+
+    <div class='books'>
+
+        <h4>Books</h4>
+
+        <input type="text" class="book_id" />
+
+        <label>Author</label>
+        <input type="text" class="book_authorname" />
+        <br/>
+
+        <label>BookName</label>
+        <input type="text" class="bookname" />
+        <br/>
+
+        <label>Price</label>
+        <input type="text" class="book_price" />
+        <br/>
+
+        <button id="submit-book">Submit</button>
+
+
+        <table id="book">
+            <thead>
+                <tr class="">
+                    <th class="">Autor</th>
+                    <th class="">Livro</th>
+                    <th class="">Preço</th>
+                    <th class="">Ação</th>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+
+        </table>
+
+    </div>
+
+
+
+    <div class='songs'>
+        
+        <h4>Songs</h4>
+        <input type="text" class="song_id" />
+
+        <label>Author</label>
+        <input type="text" class="song_authorname" />
+        <br/>
+
+        <label>SongName</label>
+        <input type="text" class="songname" />
+        <br/>
+
+        <label>Price</label>
+        <input type="text" class="song_price" />
+        <br/>
+
+        <button id="submit-song">Submit</button>
+
+        <table id="song">
+            <thead>
+                <tr class="">
+                    <th class="">Autor</th>
+                    <th class="">Música</th>
+                    <th class="">Preço</th>
+                    <th class="">Ação</th>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class='videos'>
+        <h4>Videos</h4>
+        <input type="text" class="video_id" />
+
+        <label>Author</label>
+        <input type="text" class="video_authorname" />
+        <br/>
+
+        <label>VideoName</label>
+        <input type="text" class="videoname" />
+        <br/>
+
+        <label>Price</label>
+        <input type="text" class="video_price" />
+        <br/>
+
+        <button id="submit-video">Submit</button>
+
+        <table id="video">
+            <thead>
+                <tr class="">
+                    <th class="">Autor</th>
+                    <th class="">Video</th>
+                    <th class="">Preço</th>
+                    <th class="">Ação</th>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+
+        </table>
+
+    </div>
+
+
+</body>
+</html>

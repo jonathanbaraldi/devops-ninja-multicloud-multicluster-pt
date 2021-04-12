@@ -1,0 +1,13 @@
+data:
+  user: 'root'
+  host: 'cockroachdb.jonjon.svc.cluster.local' 
+  database: 'files' 
+  port: '26257'
+
+  cloud: 'aws'
+  cluster: 'prod-1' 
+  deployment: 'single' 
+
+
+
+

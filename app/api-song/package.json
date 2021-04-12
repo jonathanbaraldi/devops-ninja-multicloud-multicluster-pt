@@ -1,0 +1,10 @@
+{
+  "name": "Node-APIs",
+  "version": "0.0.1",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.8.7",
+    "mysql": "^2.5.5"
+  }
+}

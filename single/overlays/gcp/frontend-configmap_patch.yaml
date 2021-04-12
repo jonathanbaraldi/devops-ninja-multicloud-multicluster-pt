@@ -1,0 +1,6 @@
+data:
+  api.js: |
+    var api  = "https://api.multicloud.ml";
+    var VideoPath = "/video";
+    var SongPath  = "/song";
+    var BookPath  = "/book";

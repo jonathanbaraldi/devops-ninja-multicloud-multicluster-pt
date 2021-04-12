@@ -1,0 +1,14 @@
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: cockroachdb
+  annotations:
+spec:
+  rules:
+    - host: cockroachdb.rancher
+      http:
+        paths:
+          - backend:
+              serviceName: cockroachdb
+              servicePort: 8080

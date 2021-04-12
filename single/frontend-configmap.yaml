@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: 2mc-configmap
+
+data:
+  api.js: |
+    var api  = "https://api.dev-ops-ninja.com";
+    var path = "/book";

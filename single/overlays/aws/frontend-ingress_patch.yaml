@@ -1,0 +1,8 @@
+spec:
+  rules:
+    - host: app.dev-ops-ninja.com
+      http:
+        paths:
+          - backend:
+              serviceName: mc-frontend
+              servicePort: 80

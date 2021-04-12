@@ -1,0 +1,32 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: api-song 
+  # namespace: whoami5
+  labels:
+    allow.http: "false"
+    application: api-song
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: api-song
+  template:
+    metadata:
+      labels:
+        application: api-song
+    spec:
+      containers:
+      - name: api-song
+        image: jonathanbaraldi/api-song:dev
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: config
+        ports:
+        - containerPort: 80
+        securityContext:
+          privileged: true
+
+

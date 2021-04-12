@@ -1,0 +1,30 @@
+
+# https://doc.traefik.io/traefik/v1.7/user-guide/kubernetes/
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: api
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
+spec:
+  rules:
+    - host: api.rancher
+      http:
+        paths:
+          - path: /book
+            backend:
+              serviceName: api-book
+              servicePort: 80
+          - path: /song
+            backend:
+              serviceName: api-song
+              servicePort: 80
+          - path: /video
+            backend:
+              serviceName: api-video
+              servicePort: 80
+
+
+
