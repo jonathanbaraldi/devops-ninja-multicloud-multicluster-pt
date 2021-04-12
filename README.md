@@ -20,7 +20,7 @@
 </center>
 
 
-![DevOps Ninja - Multicloud-Multicluster](doc/logo.png)
+![DevOps Ninja - Multicloud-Multicluster](doc/img/logo.png)
 
 # UDEMY
 
