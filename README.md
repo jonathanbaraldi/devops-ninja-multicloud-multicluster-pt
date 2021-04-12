@@ -1,21 +1,21 @@
 <center>
-<a href="https://github.com/jonathanbaraldi/2mc/stargazers">
-	<img src="https://img.shields.io/github/stars/jonathanbaraldi/2mc" alt="Stars Badge"/>
+<a href="https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt/stargazers">
+	<img src="https://img.shields.io/github/stars/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt" alt="Stars Badge"/>
 </a>
-<a href="https://github.com/jonathanbaraldi/2mc/network/members">
-	<img src="https://img.shields.io/github/forks/jonathanbaraldi/2mc" alt="Forks Badge"/>
+<a href="https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt/network/members">
+	<img src="https://img.shields.io/github/forks/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt" alt="Forks Badge"/>
 </a>
-<a href="https://github.com/jonathanbaraldi/2mc/pulls">
-	<img src="https://img.shields.io/github/issues-pr/jonathanbaraldi/2mc" alt="Pull Requests Badge"/>
+<a href="https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt/pulls">
+	<img src="https://img.shields.io/github/issues-pr/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt" alt="Pull Requests Badge"/>
 </a>
-<a href="https://github.com/jonathanbaraldi/2mc/issues">
-	<img src="https://img.shields.io/github/issues/jonathanbaraldi/2mc" alt="Issues Badge"/>
+<a href="https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt/issues">
+	<img src="https://img.shields.io/github/issues/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt" alt="Issues Badge"/>
 </a>
-<a href="https://github.com/jonathanbaraldi/2mc/graphs/contributors">
-	<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/jonathanbaraldi/2mc?color=2b9348">
+<a href="https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt/graphs/contributors">
+	<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt?color=2b9348">
 </a>
-<a href="https://github.com/jonathanbaraldi/2mc/blob/master/LICENSE">
-	<img src="https://img.shields.io/github/license/jonathanbaraldi/2mc?color=2b9348" alt="License Badge"/>
+<a href="https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt/blob/master/LICENSE">
+	<img src="https://img.shields.io/github/license/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt?color=2b9348" alt="License Badge"/>
 </a>
 </center>
 

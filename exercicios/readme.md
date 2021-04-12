@@ -3,7 +3,10 @@
 ## Aula 1 - O curso e o instrutor
 - Apresentação
 - Agenda
+
 https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt
+
+https://www.udemy.com/user/jonathan-dias-baraldi/
 
 
 ## Aula 2 - Nuvens
