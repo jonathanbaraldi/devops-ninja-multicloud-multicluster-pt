@@ -14,13 +14,6 @@ ativar as apis do google
 configurar o dns
 
 
-https://cloud.google.com/load-balancing/docs/https/ext-https-lb-simple
-
-
-
-API [compute.googleapis.com] not enabled on project [725193720429].
-
-
 # 1 - Configuração do Cluster Kubernetes
 ```sh
 # Creating a managed instance group
@@ -48,13 +41,13 @@ $ gcloud compute instance-groups set-named-ports multicloud-backend \
 
 
 # Configuring a firewall rule
-$ gcloud compute firewall-rules create fw-allow-health-check \
-    --network=default \
-    --action=allow \
-    --direction=ingress \
-    --source-ranges=130.211.0.0/22,35.191.0.0/16 \
-    --target-tags=allow-health-check \
-    --rules=tcp:80
+# $ gcloud compute firewall-rules create # fw-allow-health-check \
+#     --network=default \
+#     --action=allow \
+#     --direction=ingress \
+#     --source-ranges=130.211.0.0/22,35.191.0.0/16 \
+#     --target-tags=allow-health-check \
+#     --rules=tcp:80
 
 ```
 
@@ -74,8 +67,9 @@ Agora iremos configurar o DNS pelo qual o Traefik irá responder. No arquivo ui.
 $ kubectl apply -f traefik.yaml
 ```
 
-
 # 3 - Configuração Longhorn
+
+
 
 # 4 -  Criação do certificado não válido
 
@@ -89,7 +83,10 @@ Organizational Unit Name (eg, section) []:nameOfYourDivision
 Common Name (eg, YOUR name) []:*.example.com
 Email Address []:webmaster@example.com
 ```
+  
+  *.multicloud.ml  
 
+  multicloud
 
 ```sh
 
@@ -100,34 +97,12 @@ Email Address []:webmaster@example.com
 
 # multi-cloud-2
 
-# $ gcloud compute ssl-certificates create www-ssl-cert \
+# $ gcloud compute ssl-certificates create multicloud \
 #         --certificate=certificate-file \
 #         --private-key=private-key-file \
 #         --global
     
 #  nome do certificado que subi - devops-ninja
-
-
-
-
-$ gcloud compute ssl-certificates create multicloud \
-    --description=multicloud \
-    --domains=multicloud.ml \
-    --global
-
-
-$ gcloud compute ssl-certificates list \
-   --global
-
-
-$ gcloud compute ssl-certificates describe multicloud \
-   --global \
-   --format="get(name,managed.status, managed.domainStatus)"
-
-$ gcloud compute ssl-certificates describe CERTIFICATE_NAME \
-   --global \
-   --format="get(name,managed.status, managed.domainStatus)"
-
 ```
 
 
@@ -147,7 +122,7 @@ $ gcloud compute addresses describe lb-ipv4-1 \
     --format="get(address)" \
     --global
 
-#  34.95.124.40
+#  34.96.99.180
 
 # SETUP
 
@@ -179,7 +154,7 @@ $  gcloud compute url-maps create web-map-https \
 
 # Criar um http proxy para fazer o  roteamento
 $ gcloud compute target-https-proxies create https-lb-proxy \
-    --url-map web-map-https --ssl-certificates multi-cloud-2
+    --url-map web-map-https --ssl-certificates multicloud
     
 # Criar regra global de forwarding 
 $ gcloud compute forwarding-rules create https-content-rule \

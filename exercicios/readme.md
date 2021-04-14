@@ -10,8 +10,17 @@ https://www.udemy.com/user/jonathan-dias-baraldi/
 
 
 ## Aula 2 - Nuvens
+
+https://www.gartner.com/en/documents/2020/3989743-magic-quadrant-for-cloud-infrastructure-and-platform-ser
+
 - AWS
+	https://pages.awscloud.com/GLOBAL-multi-DL-gartner-mq-cips-2020-learn.html
+	https://aws.amazon.com/pt/about-aws/global-infrastructure/
+
 - GCP
+	https://cloud.google.com/gartner-cloud-infrastructure-as-a-service?hl=pt-br
+	https://cloud.google.com/infrastructure?hl=pt-br
+
 - Requisitos mínimos
 	- 2 nuvens - Preferência AWS e GCP || 2 datacenters, ou algo que simule 2 provedores distintos.
 	- 2 ou mais domínios - DNS
@@ -20,10 +29,11 @@ https://www.udemy.com/user/jonathan-dias-baraldi/
 
 
 
+
 ## Aula 3 - Containers e Kubernetes
 - Containers
 - Kubernetes
-
+doc/containers-kubernetes.pdf
 
 
 
@@ -59,15 +69,25 @@ doc/multicluster.md
 ## Aula 6 - Nuvens
 https://aws.amazon.com/pt/
 https://cloud.google.com
+
 	- VPC
 	- EC2
 	- ELB
 	- IAM
 	- Route53
-	- Etc...
+
+
+```sh
+$ ssh-keygen -t rsa -f chave -C multicloud
+```
 
 ## Aula 7 - Kubernetes
 https://kubernetes.io
+
+https://kubernetes.io/docs/concepts/overview/
+
+https://kubernetes.io/docs/concepts/workloads/
+
 	- Rede
 	- Pods
 	- Containers
@@ -75,55 +95,55 @@ https://kubernetes.io
 	- Ingress
 	- Volume
 
+
 ## Aula 8 - Aplicação
 pasta app
 	- Frontend - NGINX
 	- backend - 3 microserviços - NODEJS
 	- database - CockroachDB
+	6 total - 
 
+## Aula 9 - DNS 
+	- Criação do domínio no Freenom
 
-
+https://www.freenom.com/pt/index.html?lang=pt
 
 
 
 
 # Single Deployment (Único)
 
-## Aula 9 - AWS + Kubernetes + Rancher 
-Pasta aws
+## Aula 10 - AWS + Rancher
+## Aula 11 - AWS + Kubernetes + Route53
+pasta aws
 
-## Aula 10 - GCP + Kubernetes
-Pasta gcp
+## Aula 12 - GCP + Kubernetes
+## Aula 13 - GCP + DNS
+pasta gcp
 
-## Aula 11 - Aplicação - Fleet
-Pasta single
-
-
-
-
+## Aula 14 - Aplicação - Fleet
+pasta single
 
 
 # Distributed Deployment (Distribuído)
 
-## Aula 12 - AWS + Database
+## Aula 15 - AWS 
+## Aula 16 - Database
 cockroachdb/cockroach-aws.md
 
-## Aula 13 - GCP + Database
+## Aula 17 - GCP
+## Aula 18 - Database
 cockroachdb/cockroach-gcp.md
 
-## Aula 14 - Aplicação - Fleet
+## Aula 19 - Aplicação - Fleet
 Pasta distributed
-
-
 
 
 
 # Revisão
 
+## Aula 20
 Revisar todos os itens do curso e agradecer, falar sobre os pontos a serem melhorados ainda, e que estarei atualizando o curso para que esteja sempre atualizado.
-
-
-
 
 
 

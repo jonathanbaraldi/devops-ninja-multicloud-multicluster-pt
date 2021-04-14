@@ -19,7 +19,7 @@ metadata:
   namespace: kube-system
 spec:
   rules:
-  - host: traefik.dev-ops-ninja.com
+  - host: traefik.devops-ninja.ml
     http:
       paths:
       - path: /
