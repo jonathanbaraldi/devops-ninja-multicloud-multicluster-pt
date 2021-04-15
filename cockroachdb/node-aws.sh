@@ -1,7 +1,7 @@
 #!/bin/bash
 timedatectl set-ntp no
 apt-get update
-apt-get install ntp
+apt-get install ntp -y
 service ntp stop
 ntpd -b time.google.com
 service ntp start

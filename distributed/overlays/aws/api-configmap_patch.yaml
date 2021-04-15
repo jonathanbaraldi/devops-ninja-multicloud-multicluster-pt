@@ -1,6 +1,6 @@
 data:
   user: 'root'
-  host: 'cockroachdb.jonjon.svc.cluster.local' 
+  host: 'cockroachdb-01a4ebfe23a8eada.elb.us-east-2.amazonaws.com' 
   database: 'files' 
   port: '26257'
 

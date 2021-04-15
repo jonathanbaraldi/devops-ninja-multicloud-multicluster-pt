@@ -1,4 +1,7 @@
 data:
   api.js: |
-    var api  = "https://api.dev-ops-ninja.com";
-    var path = "/book";
+    var api       = "https://api.devops-ninja.ml";
+    var VideoPath = "/video";
+    var SongPath  = "/song";
+    var BookPath  = "/book";
+    alert('GCP');

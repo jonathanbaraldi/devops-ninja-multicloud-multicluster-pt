@@ -124,25 +124,110 @@ pasta gcp
 ## Aula 14 - Aplicação - Fleet
 pasta single
 
+Iniciar banco de dados
+
+
+```sh
+$ kubectl -n jonjon run cockroachdb -it \
+--image=cockroachdb/cockroach:v20.2.4 \
+--rm \
+--restart=Never \
+-- sql \
+--insecure \
+--host=cockroachdb.jonjon.svc.cluster.local
+
+$ CREATE DATABASE files;
+```
+pasta app/db/books.sql
+
+
 
 # Distributed Deployment (Distribuído)
 
-## Aula 15 - AWS 
-## Aula 16 - Database
-cockroachdb/cockroach-aws.md
 
-## Aula 17 - GCP
-## Aula 18 - Database
-cockroachdb/cockroach-gcp.md
 
-## Aula 19 - Aplicação - Fleet
-Pasta distributed
+## Aula 15 - AWS + GCP + Database
+cockroachdb/cockroach-aws.md - Inicio
+cockroachdb/cockroach-gcp.md - Inicio
 
+
+## Aula 16 - AWS + GCP + LoadBalancer
+cockroachdb/cockroach-aws.md - Restante
+cockroachdb/cockroach-gcp.md - Restante
+
+
+
+## Aula 17 - Traefik, Route53 e Load Balancer
+
+Nessa aula, iremos configurar os 2 Traefiks dos 2 cluster para responderem pelo mesmo dominimo.
+
+Fazer o apply do Traefik da AWS no cluster do GCP. Apenas isso. 
+
+
+CRIACAO DE NOVO TARGET PARA ELB NO GCP, usando o mesmo certificado da AWS.
+
+34.96.99.180
+
+
+```sh
+
+
+# Criar um http proxy para fazer o  roteamento
+$ gcloud compute target-https-proxies create https-lb-proxy-devops \
+    --url-map web-map-https --ssl-certificates devops-ninja
+    
+# Criar regra global de forwarding 
+$ gcloud compute forwarding-rules create https-content-rule \
+    --address=lb-ipv4-1\
+    --global \
+    --target-https-proxy=https-lb-proxy-devops \
+    --ports=443
+
+```
+
+```sh
+$ kubectl apply -f traefik.yaml
+```
+
+https://docs.aws.amazon.com/pt_br/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted
+
+
+E iremos configurar o Route53 para fazer rota com base em peso, enviando 50% do tráfego para o cluster Kubernetes na AWS e 50% para o cluster Kubernetes no GCP.
+
+Validar ambiente distribuído
+
+
+## Aula 18 - Aplicação - Fleet
+
+Popular o banco
+```sh
+$ ssh -i devops-multicloud.pem ubuntu@3.16.216.254
+
+$ cockroach sql --insecure
+```
+
+
+```sql
+CREATE DATABASE files;
+
+CREATE TABLE files.book ( id SERIAL PRIMARY KEY, BookName TEXT NOT NULL, AuthorName TEXT NOT NULL, Price REAL); 
+INSERT INTO files.book ( BOOKNAME, AUTHORNAME, PRICE) VALUES ('BookJones', 'Jonathan', 85000.00);
+
+
+CREATE TABLE files.song ( id SERIAL PRIMARY KEY, SongName TEXT NOT NULL, AuthorName TEXT NOT NULL, Price REAL); 
+INSERT INTO files.song ( SONGNAME, AUTHORNAME, PRICE) VALUES ('SongJones', 'Jonathan', 35000.00);
+
+CREATE TABLE files.video ( id SERIAL PRIMARY KEY, VideoName TEXT NOT NULL, AuthorName TEXT NOT NULL, Price REAL); 
+INSERT INTO files.video ( VIDEONAME, AUTHORNAME, PRICE) VALUES ('VideoJones', 'Jonathan', 25000.00);
+
+```
+
+Fleet na pasta distributed alterando os balanceadores de carga.
 
 
 # Revisão
 
-## Aula 20
+## Aula 19
 Revisar todos os itens do curso e agradecer, falar sobre os pontos a serem melhorados ainda, e que estarei atualizando o curso para que esteja sempre atualizado.
 
 
@@ -164,7 +249,13 @@ ENGLISH
 	DevOps Ninja: Multicloud+Multicluster K8S+Traefik+Rancher
 	https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-en
 
+	https://www.udemy.com/course/
+	multicloud-multicluster-k8s-rancher-cockroachdb-traefik
+
 
 PORTUGUESE
 	DevOps Ninja: Multicloud+Multicluster K8S+Rancher+Traefik
 	https://github.com/jonathanbaraldi/devops-ninja-multicloud-multicluster-pt
+
+	https://www.udemy.com/course/
+	multicloud-multicluster-k8s-rancher-traefik-cockroachdb

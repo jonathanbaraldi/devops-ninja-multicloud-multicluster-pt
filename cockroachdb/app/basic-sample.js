@@ -4,7 +4,7 @@ var pg = require('pg');
 
 var config = {
     user: 'root',
-    host: '10.142.0.35',
+    host: '10.142.0.21',
     database: 'books',
     port: 26257
 };
@@ -29,20 +29,20 @@ pool.connect(function (err, client, done) {
     async.waterfall([
             function (next) {
                 
-                client.query('CREATE TABLE IF NOT EXISTS accounts (id INT PRIMARY KEY, balance INT);', next);
+                client.query('CREATE TABLE IF NOT EXISTS accounts2 (id INT PRIMARY KEY, balance INT);', next);
             },
             function (results, next) {
                 
-                client.query('INSERT INTO accounts (id, balance) VALUES (6, 2000), (7, 350);', next);
+                client.query('INSERT INTO accounts2 (id, balance) VALUES (6, 2000), (7, 350);', next);
             },
             function (results, next) {
             
-                client.query('SELECT id, balance FROM accounts;', next);
+                client.query('SELECT id, balance FROM accounts2;', next);
             },
         ],
         function (err, results) {
             if (err) {
-                console.error('Error inserting into and selecting from accounts: ', err);
+                console.error('Error inserting into and selecting from accounts2: ', err);
                 finish();
             }
 

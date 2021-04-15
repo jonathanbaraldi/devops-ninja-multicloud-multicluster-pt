@@ -1,11 +1,5 @@
 
-
-# LoadBalancer
-
-
-https://cloud.google.com/load-balancing/docs/https/ext-https-lb-simple
-
-b-backend-template
+# CockroachDB
 
 ```sh
 # Creating a managed instance group
@@ -22,30 +16,27 @@ $ gcloud compute instance-templates create cockroachdb \
 
 # Create the managed instance group based on the template.
 $ gcloud compute instance-groups managed create cockroachdb \
-   --template=cockroachdb --size=3 --zone=us-east1-b
+   --template=cockroachdb --size=2 --zone=us-east1-b
 
 
 ```
 
 
 
-
-
 # GCP
+
 
 ```sh
 
-34.75.222.33
-34.73.14.146
-104.196.65.162
+
+GCP 34.74.83.107
+GCP 35.231.230.170
+
+cockroach start --insecure --advertise-addr=34.74.83.107 --join=3.16.216.254,3.143.245.211,34.74.83.107,35.231.230.170 --cache=.25 --max-sql-memory=.25  --background
+
+cockroach start --insecure --advertise-addr=35.231.230.170 --join=3.16.216.254,3.143.245.211,34.74.83.107,35.231.230.170 --cache=.25 --max-sql-memory=.25  --background
 
 
-ssh -i devops-ninja.pem ubuntu@54.210.83.85
-ssh -i devops-ninja.pem ubuntu@52.90.106.37
-
-cockroach start --insecure --advertise-addr=34.75.222.33   --join=34.75.222.33,34.73.14.146,104.196.65.162 --cache=.25 --max-sql-memory=.25  --background
-cockroach start --insecure --advertise-addr=34.73.14.146   --join=34.75.222.33,34.73.14.146,104.196.65.162 --cache=.25 --max-sql-memory=.25  --background
-cockroach start --insecure --advertise-addr=104.196.65.162 --join=34.75.222.33,34.73.14.146,104.196.65.162 --cache=.25 --max-sql-memory=.25  --background
 
 cockroach init --insecure
 cockroach sql --insecure
@@ -58,19 +49,19 @@ CREATE DATABASE books;
 ```sh
 
 # Adding a named port to the instance group
-$ gcloud compute instance-groups set-named-ports cockroachdb \
-    --named-ports http:80 \
-    --zone us-east1-b
+# $ gcloud compute instance-groups set-named-ports cockroachdb \
+#     --named-ports http:80 \
+#     --zone us-east1-b
 
 
 # Configuring a firewall rule
-$ gcloud compute firewall-rules create fw-allow-health-check \
-    --network=default \
-    --action=allow \
-    --direction=ingress \
-    --source-ranges=130.211.0.0/22,35.191.0.0/16 \
-    --target-tags=allow-health-check \
-    --rules=tcp:80
+# $ gcloud compute firewall-rules create fw-allow-health-check \
+#     --network=default \
+#     --action=allow \
+#     --direction=ingress \
+#     --source-ranges=130.211.0.0/22,35.191.0.0/16 \
+#     --target-tags=allow-health-check \
+#     --rules=tcp:80
 
 
 
@@ -86,8 +77,6 @@ $ gcloud compute health-checks create tcp tcp-health-check \
     --port 8080
     
 # COLOCAR AQUI O CAMINHO :8080 /api/providers para responder no balanceador
-# !!!!!
-# SO FALTA COLOCAR O HTTPS
 
 # Backend Service
 $ gcloud compute backend-services create network-lb-backend-service \
@@ -115,13 +104,13 @@ $ gcloud compute forwarding-rules create fr-ilb \
    
 ```
 
-- 10.142.0.37
+10.142.0.21
 
 
 Atualizar o node na máquina para testar
+
 ```sh 
 curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 bash nodesource_setup.sh
 apt install nodejs
-
 ```
