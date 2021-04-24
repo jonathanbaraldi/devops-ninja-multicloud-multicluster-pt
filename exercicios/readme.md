@@ -225,6 +225,8 @@ INSERT INTO files.video ( VIDEONAME, AUTHORNAME, PRICE) VALUES ('VideoJones', 'J
 Fleet na pasta distributed alterando os balanceadores de carga.
 
 
+
+
 # Revisão
 
 ## Aula 19

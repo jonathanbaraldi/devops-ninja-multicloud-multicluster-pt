@@ -28,7 +28,7 @@
 
 Este repositório pertence ao meu curso da Udemy, DevOps Ninja: Multicloud-Multicluster:
 
-https://www.udemy.com/course/devops-mao-na-massa-docker-kubernetes-rancher/?referralCode=E0F907D36B02CEE83227
+https://www.udemy.com/course/multicloud-multicluster-k8s-rancher-traefik-cockroachdb/?referralCode=9AE9624A95C83529212F
 
 Acesse e aproveite o cupom de desconto para usuários do GitHub!
 
