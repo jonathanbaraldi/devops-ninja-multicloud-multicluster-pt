@@ -236,6 +236,53 @@ Revisar todos os itens do curso e agradecer, falar sobre os pontos a serem melho
 
 
 
+# Controle de custos
+
+## Aula 20 - Simulador
+http://simulador-aws.s3-website-us-east-1.amazonaws.com/
+
+## Aula 21 - Controle de custos AWS 
+
+- Custo dos serviços
+https://aws.amazon.com/pt/ec2/pricing/on-demand/
+
+- Cost Explorer
+https://aws.amazon.com/pt/aws-cost-management/aws-cost-explorer/
+* Ferramentas mágicas
+
+
+## Aula 22 - Controle de custos GCP
+
+- Custo dos serviços
+https://cloud.google.com/compute/vm-instance-pricing?hl=pt-br
+
+- Console de Faturamento
+
+
+# Monitoramento
+
+## Aula 23 - AWS - CloudWatch
+https://aws.amazon.com/pt/cloudwatch/
+
+## Aula 24 - GCP - Monitoring
+https://cloud.google.com/monitoring?hl=pt-br
+
+## Aula 25 - Kubernetes Monitoring
+- Habilitar Prometheus+Grafana
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ROADMAP - Próximas atualizações
 
 - Terraform

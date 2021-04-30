@@ -26,7 +26,7 @@ $ gcloud compute instance-templates create multicloud \
    --image-family=debian-9 \
    --image-project=debian-cloud \
    --machine-type=e2-medium \
-   --metadata-from-file startup-script=install-k8s.sh
+   --metadata-from-file startup-script=install-k8s2.sh
 
 # Create the managed instance group based on the template.
 $ gcloud compute instance-groups managed create multicloud-backend \
